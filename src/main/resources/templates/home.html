@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="layout :: page('home.heading')">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<div th:fragment="content">
+
+    <div class="hero-unit bg-info" style="padding: 20px;">
+        <h1>Login with Google openID connect</h1>
+        <div>
+            <form role="form" action="#" th:action="@{/openid}" method="get">
+                <button id="button-login" type="submit" class="btn  btn-large btn-success">OpenID Connect Login</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="hero-unit bg-info">
+        <div class="col-xs-4 bg-info" style="height: 500px;">
+            <br/><br/>
+            <strong><p class="lead">OpenId Connect Flow</p></strong><br/>
+            <p class="lead">RP - Relying paty - this app </p><br/>
+            <p class="lead">OP - OpenID Connect provider - Auth Server - Google </p><br/>
+            <p class="lead">RS - Resource Server - Google API </p><br/>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

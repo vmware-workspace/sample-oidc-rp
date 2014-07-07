@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="layout :: page('oidc.heading')">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>OpenId Connect Response</title>
+
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    </link>
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+    </style>
+    <!-- See http://twitter.github.com/bootstrap/scaffolding.html#responsive -->
+    <link href="/resources/css/bootstrap-responsive.min.css" rel="stylesheet">
+    </link>
+</head>
+<body>
+<div th:fragment="content">
+    <br/>
+
+    <div class="lead padded bg-info" style="padding-left: 30px; padding-right: 30px; padding-top: 20px; padding-bottom: 20px;">
+        <div class="lead">
+            <h1> Access Token </h1>
+
+            <p th:text="*{accessToken}"/>
+        </div>
+        <div class="lead">
+            <b><a href="#" th:href="@{/verify(token=*{accessToken},type=access_token)}">Verify access token</a></b>
+        </div>
+
+        <div class="lead">
+            <h1> Contents of decrypted ID Token paylod </h1>
+
+            <p th:text="*{idTokenDecrypted}"/>
+        </div>
+        <div class="lead">
+            <b><a href="#" th:href="@{/verify(token=*{idToken},type=id_token)}">Verify ID token</a></b>
+        </div>
+        <br/>
+        <table WIDTH="100%" CELLPADDING="4" CELLSPACING="4">
+            <tr>
+                <td>
+                    <div th:fragment="content">
+                        <form class="form-horizontal" role="form" action="#" th:action="@{/launch}" method="get">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button id="button-login" type="submit" class="btn btn-large btn-success">Access Google Plus
+                                        API
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </td>
+                <td>
+                    <div th:fragment="content">
+                        <form class="form-horizontal" role="form" action="#" th:action="@{/userinfo}" method="get">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button id="button-login" type="submit" class="btn btn-large btn-success">Go to userinfo
+                                        endpoint
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br/><br/>
+    </div>
+</div>
+</body>
+</html>

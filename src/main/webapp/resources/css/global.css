@@ -1,0 +1,35 @@
+body {
+    background: transparent url(/resources/images/bg5.jpg) repeat-x;
+    background-size: cover;
+}
+h1 {
+    text-shadow: white 0.1em 0.1em 0.2em;
+}
+.container {
+    margin-top:10px;
+}
+.content {
+    margin: 10px ;
+}
+
+div.padded {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.footer {
+    margin-bottom:5px;
+}
+.navbar-inner {
+    background-color: lightgray;
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+.navbar-nav {
+    font-size: 20px;
+    font-weight: normal;
+}

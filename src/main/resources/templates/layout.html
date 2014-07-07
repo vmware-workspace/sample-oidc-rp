@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:fragment="page (heading)">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://openid.net/wordpress-content/uploads/2014/02/openid-r-logo.png" rel="shortcut icon" type="image/x-icon"/>
+    <link href="/resources/css/global.css" rel="stylesheet" type="text/css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<div class="container">
+
+    <h1><a href="”#”" th:text="#{${heading}}">Welcome to OIDC RP</a></h1>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <img src="http://ebmedia.eventbrite.com/s3-s3/eventlogos/4344110/3064019565-1.png" height="200" width="120" id="logo" class="img-responsive pull-left"/>
+                <ul class="nav pull-center navbar-nav">
+                    <li><a href="#" th:href="@{/}">Home</a></li>
+                    <li><a href="#" th:href="@{/openid}">Login</a></li>
+                    <li><a href="#" th:href="@{/userinfo}">Userinfo</a></li>
+                    <li><a href="http://openid.net/connect/">OpenID Connect</a></li>
+                    <li><a href="https://code.google.com/p/google-oauth-java-client/wiki/OAuth2">Google client wiki</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div th:include="this :: content"/>
+    <hr>
+    <footer><div class="footer"><b><a href="#" th:href="@{/logout}">Logout</a></b></div></footer>
+    </hr>
+</div>
+</body>
+</html>
